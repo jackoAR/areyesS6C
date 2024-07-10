@@ -16,6 +16,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -40,7 +41,10 @@
 
             <CollectionView x:Name="listaEstudiantes"
                             Grid.Row="1"
-                            Grid.Column="0">
+                            Grid.Column="0"
+                            SelectionChanged="listaEstudiantes_SelectionChanged"    
+                            SelectionMode="Single"
+                            >
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid>                           
@@ -62,7 +66,14 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            
+
+            <Button x:Name="btnAgregar"
+                    Text="Agregar estudiante"
+                    Clicked="btnAgregar_Clicked"
+                    Grid.Row="2" 
+                    Grid.Column="0"
+                    />
+
         </Grid>
         
         
